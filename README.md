@@ -18,5 +18,3 @@
 	* **Lottie** - Componente para animaciones vectoriales, se utilizó en el Splash Screen.
 * **Persistencía**
 	* **Sqlite** - para lograr la persistencia en está aplicación se utilizó la libreria nativa de sqlite de Android.
-
-<br>

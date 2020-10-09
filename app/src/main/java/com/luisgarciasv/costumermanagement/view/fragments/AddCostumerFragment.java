@@ -78,10 +78,13 @@ public class AddCostumerFragment extends Fragment {
             String email = inputEmail.getEditText().getText().toString();
 
             Costumer costumer = new Costumer(name,lastName,dui,nit,address,phone,email);
-
-            viewModel.newCostumer(costumer);
-            Toast.makeText(getActivity(), "El cliente " + costumer.getName() +" se agrego correctamente", Toast.LENGTH_SHORT).show();
-            NavHostFragment.findNavController(AddCostumerFragment.this).popBackStack();
+            if (dui.equals(viewModel.getCostumer(dui).getValue().getDui())){
+                Toast.makeText(getActivity(), "DUI ya existe.", Toast.LENGTH_SHORT).show();
+            } else {
+                viewModel.newCostumer(costumer);
+                Toast.makeText(getActivity(), "El cliente " + costumer.getName() +" se agrego correctamente", Toast.LENGTH_SHORT).show();
+                NavHostFragment.findNavController(AddCostumerFragment.this).popBackStack();
+            }
         }
     }
 
