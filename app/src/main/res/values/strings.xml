@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Costumer Management</string>
+    <string name="title_new_costumer">Nuevo Contacto</string>
+    <string name="hint_name">Nombres</string>
+    <string name="hint_last_name">Apellidos</string>
+    <string name="hint_dui">DUI</string>
+    <string name="hint_nit">NIT</string>
+    <string name="hint_address">Dirección</string>
+    <string name="hint_phone">Teléfono</string>
+    <string name="hint_email">Correo Eléctronico</string>
+    <string name="btn_save">Guardar</string>
+    <string name="obligatory_field">Campo Obligatorio</string>
+    <string name="error_dui">DUI no válido</string>
+    <string name="error_nit">NIT no válido</string>
+    <string name="error_email">Correo Eléctronico no válido</string>
+    <string name="error_phone">Número de Teléfono no válido</string>
+    <string name="dialog_message_delete">¿Desea eliminar este cliente?</string>
+    <string name="delete">Eliminar</string>
+    <string name="cancel">Cancelar</string>
+    <string name="toas_update_costumer">El cliente fue actualizado</string>
+    <string name="name_dev">by Luis Garcia</string>
+
+</resources>

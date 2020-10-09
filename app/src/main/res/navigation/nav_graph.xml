@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/ListCostumerFragment">
+
+    <fragment
+        android:id="@+id/ListCostumerFragment"
+        android:name="com.luisgarciasv.costumermanagement.view.fragments.ListCostumerFragment"
+        android:label="Lista de Clientes"
+        tools:layout="@layout/fragment_list_costumer">
+
+        <action
+            android:id="@+id/action_FirstFragment_to_SecondFragment"
+            app:destination="@id/AddCostumerFragment" />
+        <action
+            android:id="@+id/action_ListCostumerFragment_to_DetailCostumerFragment"
+            app:destination="@id/DetailCostumerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/AddCostumerFragment"
+        android:name="com.luisgarciasv.costumermanagement.view.fragments.AddCostumerFragment"
+        android:label="Agregar Cliente"
+        tools:layout="@layout/fragment_add_costumer"/>
+
+    <fragment
+        android:id="@+id/DetailCostumerFragment"
+        android:name="com.luisgarciasv.costumermanagement.view.fragments.DetailCostumerFragment"
+        android:label="Detalle Cliente"
+        tools:layout="@layout/fragment_detail_costumer"/>
+
+</navigation>
