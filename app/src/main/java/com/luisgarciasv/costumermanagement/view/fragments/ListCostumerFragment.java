@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
@@ -26,6 +27,7 @@ public class ListCostumerFragment extends Fragment implements CostumerListener {
     private CostumerViewModel viewModel;
     private List<Costumer> costumerList;
     private CostumerAdapter adapter;
+    private CardView layoutEmpty;
 
     @Override
     public View onCreateView(
@@ -52,6 +54,8 @@ public class ListCostumerFragment extends Fragment implements CostumerListener {
 
     private void setDataRv(View view) {
         adapter = new CostumerAdapter(costumerList, this);
+
+        layoutEmpty = view.findViewById(R.id.layout_empty);
         rvListCostumer = view.findViewById(R.id.rv_list_costumer);
         rvListCostumer.setHasFixedSize(true);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
@@ -64,10 +68,23 @@ public class ListCostumerFragment extends Fragment implements CostumerListener {
         viewModel.getCustomers().observe(getViewLifecycleOwner(), new Observer<List<Costumer>>() {
             @Override
             public void onChanged(List<Costumer> costumers) {
+
+                changeVisibilty(costumers);
+
                 costumerList = costumers;
                 adapter.setData(costumerList);
             }
         });
+    }
+
+    private void changeVisibilty(List<Costumer> costumers) {
+        if (costumers.isEmpty()){
+            rvListCostumer.setVisibility(View.GONE);
+            layoutEmpty.setVisibility(View.VISIBLE);
+        } else {
+            rvListCostumer.setVisibility(View.VISIBLE);
+            layoutEmpty.setVisibility(View.GONE);
+        }
     }
 
     @Override

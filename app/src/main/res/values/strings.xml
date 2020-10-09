@@ -19,5 +19,6 @@
     <string name="cancel">Cancelar</string>
     <string name="toas_update_costumer">El cliente fue actualizado</string>
     <string name="name_dev">by Luis Garcia</string>
+    <string name="message_empty">Aún no tenemos ningun registro ingresa uno aquí</string>
 
 </resources>
